@@ -8,6 +8,7 @@ import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { fadeIn } from '@/lib/animations';
 import { NavTabs } from '@/components/nav-tabs';
 
+
 export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

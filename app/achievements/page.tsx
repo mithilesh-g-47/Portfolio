@@ -16,29 +16,37 @@ import Image from 'next/image';
 export default function AchievementsPage() {
   const hackathonAchievements = [
     {
-      title: 'First Place - Vashishth Hackathon',
+      title: 'First Place - Vashisht Hackathon',
       venue: 'IIITDM Kancheepuram, 2024',
-      description: 'Developed an innovative IoT solution for urban waste management',
+      // description: 'Developed an innovative IoT solution for urban waste management',
       images: [
-        '/hackathon1/image1.jpg',
-        '/hackathon1/image2.jpg',
-        '/hackathon1/image3.jpg',
+        '/vashisht_hackathon/vash2.jpg',        '/vashisht_hackathon/vash5.jpg',
+
+        '/Vashisht_Hackathon/vash3.jpg',
+        '/Vashisht_Hackathon/vash4.jpg',
       ],
     },
     {
       title: 'First Place - Machine Learning Mania',
       venue: 'Anna University, 2024',
-      description: 'Created an AI-powered health monitoring system',
+      // description: 'Created an AI-powered health monitoring system',
       images: [
-        '/hackathon2/image1.jpg',
-        '/hackathon2/image2.jpg',
-        '/hackathon2/image3.jpg',
+        
+        '/MLMania_Hackathon/ml2.jpg',
+        '/MLMania_Hackathon/ml3.jpg',
       ],
     },
     {
       title: 'Winners - Data-A-Thon',
       venue: 'VIT, 2025',
-      // description: 'Built a blockchain-based payment solution',
+      images: [
+        '/Datathon/thon2.jpg',
+        '/Datathon/thon.jpg'
+      ],
+    },
+    {
+      title: '7th Position @Leaderboard Data-A-Thon',
+      venue: 'VIT, 2025',
       images: [
         '/hackathon3/IMG_5843.png',
         '/hackathon3/2.png',
@@ -49,20 +57,20 @@ export default function AchievementsPage() {
     {
       title: 'Finalist - CodeCycle ',
       venue: 'Anna University , 2024',
-      // description: 'Developed an AR-based learning platform',
       images: [
-        '/hackathon4/CodeCycle24 x GT-0332.png',
-        '/hackathon4/CodeCycle24 x GT-0040.png',
+        '/CodeCycle_Hackathon/CodeCycle24 x GT-0040.png',
+        '/CodeCycle_Hackathon/CodeCycle24 x GT-0332.png',
+
       ],
     },
     {
-      title: 'Special Mention - Sustainability Challenge',
-      venue: '2024',
-      description: 'Created an eco-friendly supply chain solution',
+      title: 'Finalist - DataQuest',
+      venue: 'VIT, 2024',
+      // description: 'Created an eco-friendly supply chain solution',
       images: [
-        '/hackathon5/IMG_0660.png',
-        '/hackathon5/IMG_0663.png',
-        '/hackathon5/IMG_0674.jpg',
+        '/DataQuest_Hackathon/IMG_0660.png',
+        '/DataQuest_Hackathon/IMG_0663.png',
+        '/DataQuest_Hackathon/IMG_0674.jpg',
       ],
     },
   ];
@@ -105,28 +113,44 @@ export default function AchievementsPage() {
                         </p>
                       </div>
                     </div>
-                    <p className="text-muted-foreground">{achievement.description}</p>
+                    {achievement.description && (
+                      <p className="text-muted-foreground">{achievement.description}</p>
+                    )}
                   </div>
 
-                  <div className="relative rounded-lg overflow-hidden border border-border">
-                    <Carousel className="w-full">
+                  <div className="relative rounded-lg overflow-hidden ">
+                    <Carousel className="relative w-full">
                       <CarouselContent>
                         {achievement.images.map((image, imageIndex) => (
                           <CarouselItem key={imageIndex}>
-                            <div className="relative aspect-[16/9]">
-                              <Image
-                                src={image}
-                                alt={`${achievement.title} image ${imageIndex + 1}`}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
+<div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] flex items-center justify-center overflow-hidden bg-transparent">
+<Image
+                                  src={image}
+                                  alt={`${achievement.title} image ${imageIndex + 1}`}
+                                  fill
+                                  className="object-contain"
+                                />
+                              </div>
+
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
-                    </Carousel>
+
+                      {/* Scroll Buttons (fixed position inside image) */}
+                      <CarouselPrevious
+  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-0 bg-transparent hover:bg-transparent shadow-none border-none"
+  variant="ghost"
+  size="icon"
+/>
+
+<CarouselNext
+  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-0 bg-transparent hover:bg-transparent shadow-none border-none"
+  variant="ghost"
+  size="icon"
+/>
+
+                     
+                      </Carousel>
                   </div>
                 </div>
               </motion.div>
