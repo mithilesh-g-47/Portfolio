@@ -29,7 +29,7 @@ export default function Home() {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Hi, I'm <span className="text-primary">Mithilesh Gopalakrishnan. S</span>
+                Hi, I'm <span className="bg-gradient-to-l from-primary to-red-700 bg-clip-text text-transparent">Mithilesh Gopalakrishnan. S</span>
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8">
                 {/* Full Stack Developer */}

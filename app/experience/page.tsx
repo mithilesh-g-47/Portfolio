@@ -47,29 +47,34 @@ export default function ExperiencePage() {
                       <Image
                         src={"/bct.jpeg"}
                         alt={job.company + " logo"}
-                        width={56}
-                        height={56}
+                        width={100}
+                        height={100}
                         className="rounded-md object-contain bg-white border"
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold">{job.position}</h3>
-                      <p className="text-primary mb-1">{job.company}</p>
-                      <p className="text-sm text-muted-foreground mb-2">{job.duration}</p>
-                      <p className="text-muted-foreground mb-2">{job.description}</p>
-                      {job.technologies && (
-                        <div className="flex flex-wrap gap-2">
-                          {job.technologies.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2 py-1 bg-primary/10 text-primary rounded-md text-xs"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+  <h3 className="text-xl font-semibold">{job.position}</h3>
+  <p className="text-primary mb-1">{job.company}</p>
+  <p className="text-sm text-muted-foreground mb-2">{job.duration}</p>
+  <ul className="list-disc list-inside text-muted-foreground mb-2 ">
+    {job.description.map((point, i) => (
+      <li key={i}>{point}</li>
+    ))}
+  </ul>
+  {job.technologies && (
+    <div className="flex flex-wrap gap-2">
+      {job.technologies.map((tech) => (
+        <span
+          key={tech}
+          className="px-2 py-1 bg-primary/10 text-primary rounded-md text-xs"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  )}
+</div>
+
                   </motion.div>
                 ))}
               </div>
@@ -90,8 +95,8 @@ export default function ExperiencePage() {
                       <Image
                         src={edu.logo}
                         alt={edu.institution + " logo"}
-                        width={56}
-                        height={56}
+                        width={100}
+                        height={100}
                         className="rounded-md object-contain bg-white border"
                       />
                     </div>

@@ -38,9 +38,16 @@ export const EXPERIENCE = [
     logo: "/bct.jpeg",
     position: "Software Engineer",
     duration: "May-July 2025",
-    description: "Led the development of the company's main product, implementing new features and improving performance. Collaborated with the design team to create a consistent UI/UX across the application.",
+    description: [
+      "Implemented session management in an AI-based application for World Bank, enabling support for multiple users per server (previously single-user only).",
+      "Optimized data processing logic to efficiently handle over 1 million records.",
+      "Resolved record mismatch issues in the Table Comparison module.",
+      "Currently enhancing unstructured data extraction by fine-tuning models for improved accuracy on unstructured PDFs.",
+    ],
     technologies: ["Python", "Git", "Flask", "SQL"],
   },
+];
+
   // {
   //   company: "Previous Company",
   //   position: "Frontend Developer",
@@ -55,7 +62,7 @@ export const EXPERIENCE = [
   //   description: "Assisted in the development of web applications and gained experience in modern frontend technologies.",
   //   technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
   // },
-];
+
 
 export const PROJECTS = [
   {

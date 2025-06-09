@@ -9,6 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'base': '1.125rem',    // 18px
+        'lg': '1.25rem',       // 20px
+        'xl': '1.375rem',      // 22px
+        '2xl': '1.625rem',     // 26px
+        '3xl': '2rem',         // 32px
+        '4xl': '2.5rem',       // 40px
+        '5xl': '3.125rem',     // 50px
+        '6xl': '4rem',         // 64px
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
