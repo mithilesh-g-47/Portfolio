@@ -80,3 +80,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+html {
+  zoom: 1.1;
+  scroll-behavior: smooth;
+}
+@media (max-width: 640px) {
+  html {
+    zoom: 1;
+  }
+}

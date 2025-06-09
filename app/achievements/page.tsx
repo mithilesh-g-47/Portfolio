@@ -12,8 +12,12 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Image from 'next/image';
+import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog';
+import { useState } from 'react';
 
 export default function AchievementsPage() {
+  const [openImage, setOpenImage] = useState<string | null>(null);
+
   const hackathonAchievements = [
     {
       title: 'First Place - Vashisht Hackathon',
@@ -58,8 +62,8 @@ export default function AchievementsPage() {
       title: 'Finalist - CodeCycle ',
       venue: 'Anna University , 2024',
       images: [
-        '/CodeCycle_Hackathon/CodeCycle24 x GT-0040.png',
         '/CodeCycle_Hackathon/CodeCycle24 x GT-0332.png',
+        '/CodeCycle_Hackathon/CodeCycle24 x GT-0040.png',
 
       ],
     },
@@ -113,8 +117,8 @@ export default function AchievementsPage() {
                         </p>
                       </div>
                     </div>
-                    {achievement.description && (
-                      <p className="text-muted-foreground">{achievement.description}</p>
+                    {typeof (achievement as any).description === 'string' && (
+                      <p className="text-muted-foreground">{(achievement as any).description}</p>
                     )}
                   </div>
 
@@ -123,34 +127,38 @@ export default function AchievementsPage() {
                       <CarouselContent>
                         {achievement.images.map((image, imageIndex) => (
                           <CarouselItem key={imageIndex}>
-<div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] flex items-center justify-center overflow-hidden bg-transparent">
-<Image
-                                  src={image}
-                                  alt={`${achievement.title} image ${imageIndex + 1}`}
-                                  fill
-                                  className="object-contain"
-                                />
-                              </div>
-
+                            <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] flex items-center justify-center overflow-hidden bg-transparent cursor-pointer" onClick={() => setOpenImage(image)}>
+                              <Image
+                                src={image}
+                                alt={`${achievement.title} image ${imageIndex + 1}`}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
                           </CarouselItem>
                         ))}
                       </CarouselContent>
 
                       {/* Scroll Buttons (fixed position inside image) */}
                       <CarouselPrevious
-  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-0 bg-transparent hover:bg-transparent shadow-none border-none"
-  variant="ghost"
-  size="icon"
-/>
+                        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-0 bg-transparent hover:bg-transparent shadow-none border-none"
+                        variant="ghost"
+                        size="icon"
+                      />
 
-<CarouselNext
-  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-0 bg-transparent hover:bg-transparent shadow-none border-none"
-  variant="ghost"
-  size="icon"
-/>
-
-                     
-                      </Carousel>
+                      <CarouselNext
+                        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-0 bg-transparent hover:bg-transparent shadow-none border-none"
+                        variant="ghost"
+                        size="icon"
+                      />
+                    </Carousel>
+                    <Dialog open={!!openImage} onOpenChange={() => setOpenImage(null)}>
+                      <DialogContent className="max-w-4xl p-0 bg-black flex items-center justify-center">
+                        {openImage && (
+                          <Image src={openImage} alt="Full Size" width={1200} height={800} className="w-full h-auto object-contain max-h-[80vh]" />
+                        )}
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
               </motion.div>

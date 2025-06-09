@@ -108,8 +108,8 @@ export const ACHIEVEMENTS = [
 export const EDUCATION = [
   {
     institution: "Vellore Institute of Technology (VIT)",
-    degree: "B.Tech in Computer Science and Engineering",
-    period: "2021 - 2025",
+    degree: "B.Tech in Electronics and Communication Engineering",
+    period: "2022 - 2026",
     logo: "/vit.png",
     description: "Graduating with distinction. Specialized in AI, ML, and IoT. Active in hackathons and tech clubs.",
   },
@@ -118,6 +118,6 @@ export const EDUCATION = [
     degree: "Higher Secondary (CBSE)",
     period: "2020 - 2022",
     logo: "/nsnmem.jpeg",
-    description: "Completed with honors. Science stream with Computer Science."
+    description: "Graduated in Science stream with Computer Science."
   }
 ];

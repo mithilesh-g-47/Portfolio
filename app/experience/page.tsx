@@ -45,7 +45,7 @@ export default function ExperiencePage() {
                     <div className="flex-shrink-0">
                       {/* Company logo: using placeholder */}
                       <Image
-                        src={"/logos/company-placeholder.png"}
+                        src={"/bct.jpeg"}
                         alt={job.company + " logo"}
                         width={56}
                         height={56}
