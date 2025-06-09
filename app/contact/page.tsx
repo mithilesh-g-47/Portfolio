@@ -7,9 +7,18 @@ import { Textarea } from '@/components/ui/textarea';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { fadeIn } from '@/lib/animations';
 import { NavTabs } from '@/components/nav-tabs';
+import { useState } from 'react';
 
 
 export default function ContactPage() {
+  const [showCopied, setShowCopied] = useState(false);
+  const handleCopyEmail = async (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    await navigator.clipboard.writeText('mithileshg47@gmail.com');
+    setShowCopied(true);
+    setTimeout(() => setShowCopied(false), 2000);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Add your form submission logic here
@@ -85,13 +94,14 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-4">
-                <a
-                  href="mailto:mithileshg47@gmail.com"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                <button
+                  onClick={handleCopyEmail}
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors focus:outline-none"
+                  type="button"
                 >
                   <Mail className="h-5 w-5" />
                   mithileshg47@gmail.com
-                </a>
+                </button>
               </div>
 
               <div className="space-y-4">
@@ -107,17 +117,22 @@ export default function ContactPage() {
                       <Linkedin className="h-5 w-5" />
                     </a>
                   </Button>
-                  <Button variant="outline" size="icon" asChild>
+                  {/* <Button variant="outline" size="icon" asChild>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                       <Twitter className="h-5 w-5" />
                     </a>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
       </main>
+      {showCopied && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-2 rounded shadow z-50 transition-opacity animate-fade-in-out">
+          Email copied to clipboard!
+        </div>
+      )}
     </>
   );
 } 

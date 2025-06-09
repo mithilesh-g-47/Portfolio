@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   title: "Mithilesh Gopalakrishnan | Portfolio",
   description: "Personal portfolio website of Mithilesh Gopalakrishnan",
   url: "https://mithilesh.dev",
-  email: "contact@mithilesh.dev",
+  email: "mithileshg47@gmail.com",
 };
 
 export const NAV_ITEMS = [
@@ -34,26 +34,27 @@ export const SKILLS = [
 
 export const EXPERIENCE = [
   {
-    company: "Company Name",
-    position: "Senior Frontend Developer",
-    duration: "Jan 2022 - Present",
+    company: "Bahwan Cybertek",
+    logo: "/bct.jpeg",
+    position: "Software Engineer",
+    duration: "May-July 2025",
     description: "Led the development of the company's main product, implementing new features and improving performance. Collaborated with the design team to create a consistent UI/UX across the application.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+    technologies: ["Python", "Git", "Flask", "SQL"],
   },
-  {
-    company: "Previous Company",
-    position: "Frontend Developer",
-    duration: "Mar 2020 - Dec 2021",
-    description: "Developed and maintained multiple web applications using React and TypeScript. Implemented responsive designs and ensured cross-browser compatibility.",
-    technologies: ["React", "JavaScript", "CSS", "REST API"],
-  },
-  {
-    company: "First Company",
-    position: "Junior Developer",
-    duration: "Jun 2018 - Feb 2020",
-    description: "Assisted in the development of web applications and gained experience in modern frontend technologies.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-  },
+  // {
+  //   company: "Previous Company",
+  //   position: "Frontend Developer",
+  //   duration: "Mar 2020 - Dec 2021",
+  //   description: "Developed and maintained multiple web applications using React and TypeScript. Implemented responsive designs and ensured cross-browser compatibility.",
+  //   technologies: ["React", "JavaScript", "CSS", "REST API"],
+  // },
+  // {
+  //   company: "First Company",
+  //   position: "Junior Developer",
+  //   duration: "Jun 2018 - Feb 2020",
+  //   description: "Assisted in the development of web applications and gained experience in modern frontend technologies.",
+  //   technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+  // },
 ];
 
 export const PROJECTS = [
@@ -102,4 +103,21 @@ export const ACHIEVEMENTS = [
     year: "2021",
     description: "Invited to speak about innovative approaches to frontend architecture.",
   },
+];
+
+export const EDUCATION = [
+  {
+    institution: "Vellore Institute of Technology (VIT)",
+    degree: "B.Tech in Computer Science and Engineering",
+    period: "2021 - 2025",
+    logo: "/vit.png",
+    description: "Graduating with distinction. Specialized in AI, ML, and IoT. Active in hackathons and tech clubs.",
+  },
+  {
+    institution: "NSN Memorial Senior Secondary School",
+    degree: "Higher Secondary (CBSE)",
+    period: "2020 - 2022",
+    logo: "/nsnmem.jpeg",
+    description: "Completed with honors. Science stream with Computer Science."
+  }
 ];

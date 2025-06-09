@@ -12,55 +12,6 @@ export default function ProjectsPage() {
       <NavTabs />
       <main className="min-h-screen bg-background py-20">
         <div className="container px-4 mx-auto">
-          {/* Experience Section */}
-          <motion.div
-            variants={fadeIn('up', 0.2)}
-            initial="hidden"
-            animate="show"
-            className="mb-20"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Professional Experience</h2>
-            <div className="max-w-4xl mx-auto space-y-8">
-              {[
-                {
-                  title: 'Software Engineer Intern',
-                  company: 'Bahwan Cybertek',
-                  period: 'May - July 2025',
-                  description: [
-                    'Led development of multiple high-impact projects',
-                    'Mentored junior developers and conducted code reviews',
-                    'Implemented CI/CD pipelines and improved deployment processes',
-                  ],
-                },
-                {
-                  title: 'Full Stack Developer',
-                  company: 'Digital Solutions Ltd.',
-                  period: '2020 - 2022',
-                  description: [
-                    'Developed and maintained multiple client projects',
-                    'Implemented responsive web applications using React and Node.js',
-                    'Collaborated with design team to improve user experience',
-                  ],
-                },
-              ].map((job, index) => (
-                <motion.div
-                  key={job.title}
-                  variants={fadeIn('up', 0.1 * index)}
-                  className="p-6 rounded-lg border bg-card text-card-foreground"
-                >
-                  <h3 className="text-xl font-semibold">{job.title}</h3>
-                  <p className="text-primary mb-2">{job.company}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{job.period}</p>
-                  <ul className="list-disc list-inside space-y-2">
-                    {job.description.map((item, i) => (
-                      <li key={i} className="text-muted-foreground">{item}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Projects Section */}
           <motion.div
             variants={fadeIn('up', 0.3)}

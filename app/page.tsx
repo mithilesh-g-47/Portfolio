@@ -5,8 +5,16 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { fadeIn, textVariant } from '@/lib/animations';
 import { NavTabs } from '@/components/nav-tabs';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showCopied, setShowCopied] = useState(false);
+  const handleCopyEmail = async () => {
+    await navigator.clipboard.writeText('mithileshg47@gmail.com');
+    setShowCopied(true);
+    setTimeout(() => setShowCopied(false), 2000);
+  };
+
   return (
     <>
       <NavTabs />
@@ -46,13 +54,17 @@ export default function Home() {
                   LinkedIn
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="mailto:mithileshg47@gmail.com">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Email
-                </a>
+              <Button variant="outline" size="lg" onClick={handleCopyEmail}>
+                <Mail className="mr-2 h-5 w-5" />
+                Email
               </Button>
             </motion.div>
+
+            {showCopied && (
+              <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-2 rounded shadow z-50 transition-opacity animate-fade-in-out">
+                Email copied to clipboard!
+              </div>
+            )}
 
             <motion.div
               variants={fadeIn('up', 0.3)}
@@ -241,15 +253,11 @@ export default function Home() {
               <p className="text-lg text-muted-foreground mb-8">
                 Feel free to reach out for collaborations or just a friendly hello
               </p>
-              
               <div className="flex flex-col items-center gap-4">
-                <Button size="lg" asChild>
-                  <a href="mailto:mithileshg47@gmail.com">
-                    <Mail className="mr-2 h-5 w-5" />
-                    mithileshg47@gmail.com
-                  </a>
+                <Button size="lg" onClick={handleCopyEmail}>
+                  <Mail className="mr-2 h-5 w-5" />
+                  mithileshg47@gmail.com
                 </Button>
-                
                 <div className="flex gap-4">
                   <Button variant="outline" size="lg" asChild>
                     <a href="https://github.com/mithilesh-g-47" target="_blank" rel="noopener noreferrer">
